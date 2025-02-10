@@ -1,8 +1,6 @@
 def format_linter_error(error: dict) -> dict:
     # write your code here
-    return {mapping[old_error]: value for old_error, value in error.items() if old_error in mapping}
-    result["source"] = "flake8"
-    return result
+    return {**{mapping[old_error]: value for old_error, value in error.items() if old_error in mapping}, "source": "flake8"}
 
 
 def format_single_linter_file(file_path: str, errors: list) -> dict:
